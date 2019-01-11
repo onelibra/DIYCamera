@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="CameraResultOverlayView">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="560"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5h-yk-coB">
+                    <rect key="frame" x="0.0" y="0.0" width="310" height="455"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="svy-2n-zB6">
+                            <rect key="frame" x="0.0" y="0.0" width="310" height="455"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="svy-2n-zB6" firstAttribute="top" secondItem="l5h-yk-coB" secondAttribute="top" id="4jE-a7-Q7A"/>
+                        <constraint firstItem="svy-2n-zB6" firstAttribute="leading" secondItem="l5h-yk-coB" secondAttribute="leading" id="Ibe-Wk-81i"/>
+                        <constraint firstItem="svy-2n-zB6" firstAttribute="width" secondItem="l5h-yk-coB" secondAttribute="width" id="p9s-ri-Yjq"/>
+                        <constraint firstItem="svy-2n-zB6" firstAttribute="height" secondItem="l5h-yk-coB" secondAttribute="height" id="u7e-8E-2dp"/>
+                        <constraint firstAttribute="trailing" secondItem="svy-2n-zB6" secondAttribute="trailing" id="xWH-AM-TVX"/>
+                        <constraint firstAttribute="bottom" secondItem="svy-2n-zB6" secondAttribute="bottom" id="ztE-4F-rph"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="qaV-74-Wy3"/>
+                    </connections>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBx-FL-wUb">
+                    <rect key="frame" x="0.0" y="455" width="310" height="105"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k43-ne-SND">
+                            <rect key="frame" x="140" y="37.5" width="80" height="30"/>
+                            <color key="backgroundColor" red="0.1647058824" green="0.75686274509999996" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="Jyy-sB-kPz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="完成"/>
+                            <connections>
+                                <action selector="finishTakePhotoClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="bmS-KO-TMG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9S-x8-0MM">
+                            <rect key="frame" x="14" y="32" width="80" height="41"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="wgj-Q5-pFK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal">
+                                <string key="title">完成并
+拍下一题</string>
+                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled">
+                                <color key="titleColor" red="0.81960784313725488" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="takeNextQuestionClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="xxI-4u-iR8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-gh-e2c">
+                            <rect key="frame" x="90" y="39" width="80" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="7gh-87-byY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="拍第二张">
+                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled">
+                                <color key="titleColor" red="0.81960784313725488" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="takeQuestionNextPhotoClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="9ah-Z3-Z8S"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKb-yp-Dbq">
+                            <rect key="frame" x="221" y="39" width="80" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="QZu-i1-nqE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="重拍">
+                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="reTakePhoneClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="n4h-yJ-aDb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="k43-ne-SND" firstAttribute="centerY" secondItem="CBx-FL-wUb" secondAttribute="centerY" id="2Nb-t6-Dha"/>
+                        <constraint firstAttribute="height" constant="105" id="B4i-6r-Ejs"/>
+                        <constraint firstItem="k43-ne-SND" firstAttribute="centerX" secondItem="CBx-FL-wUb" secondAttribute="centerX" constant="25" id="FwS-mn-kGn"/>
+                        <constraint firstItem="c9S-x8-0MM" firstAttribute="centerY" secondItem="CBx-FL-wUb" secondAttribute="centerY" id="Jfv-Aq-KoD"/>
+                        <constraint firstItem="gKb-yp-Dbq" firstAttribute="centerX" secondItem="CBx-FL-wUb" secondAttribute="trailing" constant="-49" id="QO3-Uz-gzc"/>
+                        <constraint firstItem="tWn-gh-e2c" firstAttribute="centerY" secondItem="CBx-FL-wUb" secondAttribute="centerY" id="RJ5-yA-MmV"/>
+                        <constraint firstItem="tWn-gh-e2c" firstAttribute="centerX" secondItem="CBx-FL-wUb" secondAttribute="centerX" constant="-25" id="ZLQ-8a-sLX"/>
+                        <constraint firstItem="gKb-yp-Dbq" firstAttribute="centerY" secondItem="CBx-FL-wUb" secondAttribute="centerY" id="cGX-hE-4q1"/>
+                        <constraint firstItem="c9S-x8-0MM" firstAttribute="centerX" secondItem="CBx-FL-wUb" secondAttribute="leading" constant="54" id="gPP-Zo-R9u"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="l5h-yk-coB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8Gd-Md-sMI"/>
+                <constraint firstAttribute="trailing" secondItem="l5h-yk-coB" secondAttribute="trailing" id="CjF-Hu-WyV"/>
+                <constraint firstItem="CBx-FL-wUb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hvl-bS-OFA"/>
+                <constraint firstItem="CBx-FL-wUb" firstAttribute="top" secondItem="l5h-yk-coB" secondAttribute="bottom" id="K5T-bv-gsd"/>
+                <constraint firstAttribute="trailing" secondItem="CBx-FL-wUb" secondAttribute="trailing" id="hgJ-0l-Xal"/>
+                <constraint firstAttribute="bottom" secondItem="CBx-FL-wUb" secondAttribute="bottom" id="oBK-Vw-YcZ"/>
+                <constraint firstItem="l5h-yk-coB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="roO-8k-IyB"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="continueTakePhotoBtn" destination="tWn-gh-e2c" id="M5b-3H-bPx"/>
+                <outlet property="controllerContainerView" destination="CBx-FL-wUb" id="Obs-4z-k2m"/>
+                <outlet property="finishBtn" destination="k43-ne-SND" id="lxF-nr-sPF"/>
+                <outlet property="finishTakeAndNextBtn" destination="c9S-x8-0MM" id="OXC-Fi-FsA"/>
+                <outlet property="photoContainerView" destination="l5h-yk-coB" id="bcm-8s-gD8"/>
+                <outlet property="photoImageView" destination="svy-2n-zB6" id="Ifk-6Z-qJI"/>
+                <outlet property="reTakePhotoBtn" destination="gKb-yp-Dbq" id="tUK-VA-Tph"/>
+            </connections>
+            <point key="canvasLocation" x="108.8" y="-121.4392803598201"/>
+        </view>
+    </objects>
+</document>

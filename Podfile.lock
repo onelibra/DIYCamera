@@ -1,0 +1,20 @@
+PODS:
+  - Masonry (1.1.0)
+  - NYXImagesKit (2.3)
+
+DEPENDENCIES:
+  - Masonry (~> 1.1.0)
+  - NYXImagesKit (~> 2.3)
+
+SPEC REPOS:
+  "git@192.168.1.252:yjyx/Specs.git":
+    - Masonry
+    - NYXImagesKit
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
+
+PODFILE CHECKSUM: a083b111fad7a9dae9171ca5c2715701f5d813ac
+
+COCOAPODS: 1.5.3

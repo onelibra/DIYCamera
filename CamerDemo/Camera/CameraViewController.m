@@ -265,6 +265,7 @@
     croppingRect.size.width *= scale;
     croppingRect.size.height *= scale;
     UIImage *croppedImage = [self cropImage:resultOverlayView.photoImageView.image inFrame:croppingRect];
+    NSLog(@"%@", NSStringFromCGSize(croppedImage.size));
     // 保存裁剪好的图片
     QuestionPhotoModel *model = _questionBierfArray[_currentQuestionBierfArrayIndex];
     model.isChangeWriteProcess = YES;
@@ -329,8 +330,8 @@
 // 取消拍照
 - (void)clickBackBtn {
     // 退出界面,返回信息
-    if ([self.delegate respondsToSelector:@selector(imageFinishPickingMediaWithInfo:)]) {
-        [self.delegate imageFinishPickingMediaWithInfo:_questionBierfArray];
+    if ([self.delegate respondsToSelector:@selector(allQuestionImagePickerFinishAndMediaInfo:)]) {
+        [self.delegate allQuestionImagePickerFinishAndMediaInfo:_questionBierfArray];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

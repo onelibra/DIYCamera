@@ -47,7 +47,7 @@
     return NO;
 }
 
-- (void)imageFinishPickingMediaWithInfo:(NSArray *)info {
+- (void)allQuestionImagePickerFinishAndMediaInfo:(NSArray *)info {
     QuestionPhotoModel *model1 = info[0];
     QuestionPhotoModel *model2 = info[1];
     QuestionPhotoModel *model3 = info[2];

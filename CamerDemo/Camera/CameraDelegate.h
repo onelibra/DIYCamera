@@ -29,7 +29,7 @@
 - (void)isHiddenTipMessage:(BOOL)isHidden;
 
 /*********************  控制器回调 *******************/
-- (void)imageFinishPickingMediaWithInfo:(NSArray *)info;
+- (void)allQuestionImagePickerFinishAndMediaInfo:(NSArray *)info;
 
 /* 授权 */
 - (void)cameraNeedAuthorization:(BOOL)isCamera;
